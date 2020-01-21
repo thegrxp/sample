@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.bebound.sample.generated.BoolRequest
 import com.bebound.sample.generated.BoolResponse
 import com.bebound.sdk.BeBound
@@ -95,9 +96,14 @@ class MainActivity : AppCompatActivity(), BeBound.SubscriptionListener, BeBound.
         // Message has been sent
     }
 
-    override fun onResponse(p0: Message<*>?) {
+    override fun onResponse(message: Message<*>?) {
         // You handle your response here. Please note that we process everything in a background thread,
         // you need to use a UI thread to make UI changes.
+
+        // This is how to get a response
+        val m = message as BoolResponse
+        val response = m.data.bool_test
+        Log.d("Sample", "My response is $response")
     }
 
     override fun onError(p0: Int, p1: String?) {
