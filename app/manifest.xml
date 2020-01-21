@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beapp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="https://be-bound.com/v7/Manifest"
+       xsi:schemaLocation="https://be-bound.com/v7/Manifest">
+
+    <messages>
+        <message name="bool_request">
+            <boolean name="bool_test"/>
+        </message>
+
+        <message name="bool_response">
+            <boolean name="bool_test"/>
+        </message>
+    </messages>
+</beapp>
